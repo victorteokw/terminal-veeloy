@@ -4,6 +4,7 @@
   "description": "The terminal for viloi (the future).",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
@@ -32,6 +34,7 @@
     "html-webpack-plugin": "^3.2.0",
     "react-dom": "^16.8.4",
     "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   }
 }
