@@ -1,35 +1,49 @@
 import { hot } from 'react-hot-loader';
-import React from 'react';
+import React, { useState } from 'react';
 
-import Terminal from '../lib/Terminal';
-import TitleBar from '../lib/TitleBar';
-import ButtonGroup from '../lib/ButtonGroup';
-import Button from '../lib/Button';
-import ButtonSpacer from '../lib/ButtonSpacer';
-import Heading from '../lib/Heading';
-import CloseIcon from '../lib/CloseIcon';
-import MinimizeIcon from '../lib/MinimizeIcon';
-import MaximizeIcon from '../lib/MaximizeIcon';
+import LightTitleBar from './LightTitleBar';
+import DarkTitleBar from './DarkTitleBar';
 
-const App = () => <Terminal>
-  <TitleBar>
-    <ButtonGroup>
-      <ButtonSpacer />
-      <Button close>
-        <CloseIcon />
-      </Button>
-      <ButtonSpacer />
-      <Button minimize>
-        <MinimizeIcon />
-      </Button>
-      <ButtonSpacer />
-      <Button maximize>
-        <MaximizeIcon />
-      </Button>
-      <ButtonSpacer />
-    </ButtonGroup>
-    <Heading>Terminal</Heading>
-  </TitleBar>
-</Terminal>;
+const App = () => {
+  const [tab, setTab] = useState('dark');
+  return <div>
+    <nav style={{
+      height: '40px',
+      lineHeight: '40px',
+      fontFamily: 'monospace',
+      marginBottom: '8px'
+    }}>
+      <a style={{
+        cursor: 'pointer',
+        marginRight: '20px',
+        color: tab === 'dark' ? 'black' : '#cccccc'
+      }} onClick={() => setTab('dark')}>
+        Dark Title Bar
+      </a>
+      <a style={{
+        cursor: 'pointer',
+        marginRight: '20px',
+        color: tab === 'light' ? 'black' : '#cccccc'
+      }} onClick={() => setTab('light')}>
+        Light Title Bar
+      </a>
+      <a style={{
+        cursor: 'pointer',
+        color: tab === 'toggle' ? 'black' : '#cccccc'
+      }} onClick={() => setTab('toggle')}>
+        Toggle Title Bar Color
+      </a>
+    </nav>
+    <div style={{ display: tab === 'light' ? 'block' : 'none' }}>
+      <LightTitleBar />
+    </div>
+    <div style={{ display: tab === 'dark' ? 'block' : 'none' }}>
+      <DarkTitleBar />
+    </div>
+    <div style={{ display: tab === 'toggle' ? 'block' : 'none' }}>
+      <DarkTitleBar />
+    </div>
+  </div>;
+};
 
 export default hot(module)(App);
