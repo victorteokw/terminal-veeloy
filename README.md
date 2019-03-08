@@ -1,9 +1,9 @@
-# Terminal Viloi
+# Terminal Veeloy
 
-Viloi is a Hakka word, it means future.
+Veeloy is a Hakka word, it means future.
 
 ## Installation
 
 ```js
-npm install terminal-viloi --save
+npm install terminal-veeloy --save
 ```

@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Terminal Viloi Demo',
+      title: 'Terminal Veeloy Demo',
       filename: 'index.html'
     })
   ]

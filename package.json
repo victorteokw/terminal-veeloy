@@ -1,7 +1,7 @@
 {
-  "name": "terminal-viloi",
+  "name": "terminal-veeloy",
   "version": "1.0.0",
-  "description": "The terminal for viloi (the future).",
+  "description": "The terminal for veeloy (the future).",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhangkaiyulw/terminal-viloi.git"
+    "url": "git+https://github.com/zhangkaiyulw/terminal-veeloy.git"
   },
   "author": "Zhang Kai Yu <yeannylam@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhangkaiyulw/terminal-viloi/issues"
+    "url": "https://github.com/zhangkaiyulw/terminal-veeloy/issues"
   },
-  "homepage": "https://github.com/zhangkaiyulw/terminal-viloi#readme",
+  "homepage": "https://github.com/zhangkaiyulw/terminal-veeloy#readme",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.4"
