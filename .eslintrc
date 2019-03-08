@@ -2,7 +2,8 @@
   "extends": "man",
   "rules": {
     "react/jsx-uses-react": "warn",
-    "react/jsx-uses-vars": "warn"
+    "react/jsx-uses-vars": "warn",
+    "no-prototype-builtins": "off"
   },
   "plugins": [
     "react"
