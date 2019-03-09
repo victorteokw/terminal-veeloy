@@ -31,7 +31,10 @@ const LightTitleBar = () => <Terminal>
     </ButtonGroup>
     <Heading>Terminal</Heading>
   </TitleBar>
-  <TerminalBody style={{ backgroundColor: 'white' }}>
+  <TerminalBody style={{ backgroundColor: 'white', color: 'black' }}>
+    Last updated: Today<br />
+    To https://github.com/zhangkaiyulw/terminal-veeloy.git<br />
+    Last updated: Today
     <Cursor blink />
   </TerminalBody>
 </Terminal>;
