@@ -9,6 +9,7 @@ import Heading from '../lib/Heading';
 import CloseIcon from '../lib/CloseIcon';
 import MinimizeIcon from '../lib/MinimizeIcon';
 import MaximizeIcon from '../lib/MaximizeIcon';
+import TerminalBody from '../lib/TerminalBody';
 
 const LightTitleBar = () => <Terminal>
   <TitleBar>
@@ -29,6 +30,7 @@ const LightTitleBar = () => <Terminal>
     </ButtonGroup>
     <Heading>Terminal</Heading>
   </TitleBar>
+  <TerminalBody style={{ backgroundColor: 'white' }}></TerminalBody>
 </Terminal>;
 
 export default LightTitleBar;
