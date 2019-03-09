@@ -10,6 +10,7 @@ import CloseIcon from '../lib/CloseIcon';
 import MinimizeIcon from '../lib/MinimizeIcon';
 import MaximizeIcon from '../lib/MaximizeIcon';
 import TerminalBody from '../lib/TerminalBody';
+import Cursor from '../lib/Cursor';
 
 const LightTitleBar = () => <Terminal>
   <TitleBar>
@@ -30,7 +31,9 @@ const LightTitleBar = () => <Terminal>
     </ButtonGroup>
     <Heading>Terminal</Heading>
   </TitleBar>
-  <TerminalBody style={{ backgroundColor: 'white' }}></TerminalBody>
+  <TerminalBody style={{ backgroundColor: 'white' }}>
+    <Cursor blink />
+  </TerminalBody>
 </Terminal>;
 
 export default LightTitleBar;

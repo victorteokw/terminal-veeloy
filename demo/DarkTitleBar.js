@@ -10,6 +10,7 @@ import CloseIcon from '../lib/CloseIcon';
 import MinimizeIcon from '../lib/MinimizeIcon';
 import MaximizeIcon from '../lib/MaximizeIcon';
 import TerminalBody from '../lib/TerminalBody';
+import Cursor from '../lib/Cursor';
 
 const DarkTitleBar = () => <Terminal darkMode>
   <TitleBar>
@@ -30,7 +31,9 @@ const DarkTitleBar = () => <Terminal darkMode>
     </ButtonGroup>
     <Heading>Terminal</Heading>
   </TitleBar>
-  <TerminalBody style={{ backgroundColor: 'black' }}></TerminalBody>
+  <TerminalBody style={{ backgroundColor: 'black' }}>
+    <Cursor shape="underline" />
+  </TerminalBody>
 </Terminal>;
 
 export default DarkTitleBar;
