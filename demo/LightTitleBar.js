@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Terminal from '../lib/Terminal';
+import TerminalFrame from '../lib/TerminalFrame';
 import TitleBar from '../lib/TitleBar';
 import ButtonGroup from '../lib/ButtonGroup';
 import Button from '../lib/Button';
@@ -12,7 +12,7 @@ import MaximizeIcon from '../lib/MaximizeIcon';
 import TerminalBody from '../lib/TerminalBody';
 import Cursor from '../lib/Cursor';
 
-const LightTitleBar = () => <Terminal>
+const LightTitleBar = () => <TerminalFrame>
   <TitleBar>
     <ButtonGroup>
       <ButtonSpacer />
@@ -37,6 +37,6 @@ const LightTitleBar = () => <Terminal>
     Last updated: Today
     <Cursor blink />
   </TerminalBody>
-</Terminal>;
+</TerminalFrame>;
 
 export default LightTitleBar;
