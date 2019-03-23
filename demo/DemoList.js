@@ -9,14 +9,17 @@ const DemoList = (props) => {
   const menu = [];
   const main = [];
   const separateChild = (child) => {
-    console.log(child);
     menu.push(cloneElement(child.props.children[0], {
       selected: selected === child.props.id,
-      onClick: () => setSelected(child.props.id)
+      onClick: () => setSelected(child.props.id),
+      key: child.props.id
     }));
-    main.push(cloneElement(child.props.children[1], {
-      display: selected === child.props.id
-    }));
+    if (selected === child.props.id) {
+      main.push(cloneElement(child.props.children[1], {
+        display: selected === child.props.id,
+        key: child.props.id
+      }));
+    }
   };
   React.Children.forEach(props.children, (child) => {
     if (React.Children.count(child) === 2) {
@@ -27,8 +30,8 @@ const DemoList = (props) => {
     }
   });
   return [
-    <DemoMenu>{menu}</DemoMenu>,
-    <DemoMain>{main}</DemoMain>
+    <DemoMenu key="menu">{menu}</DemoMenu>,
+    <DemoMain key="main">{main}</DemoMain>
   ];
 };
 
@@ -43,7 +46,6 @@ const DemoItemValidator = (props, propName, componentName) => {
 };
 
 DemoList.propTypes = {
-
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(DemoItemValidator),
     DemoItemValidator
