@@ -7,7 +7,7 @@ import DemoMain from './DemoMain';
 const DemoList = (props) => {
   const [selected, setSelected] = useState('light');
   const menu = [];
-  const main = [];
+  let main;
   const separateChild = (child) => {
     menu.push(cloneElement(child.props.children[0], {
       selected: selected === child.props.id,
@@ -15,10 +15,7 @@ const DemoList = (props) => {
       key: child.props.id
     }));
     if (selected === child.props.id) {
-      main.push(cloneElement(child.props.children[1], {
-        display: selected === child.props.id,
-        key: child.props.id
-      }));
+      main = cloneElement(child.props.children[1], {});
     }
   };
   React.Children.forEach(props.children, (child) => {
