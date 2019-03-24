@@ -37,8 +37,11 @@ const DarkTitleBarDemo = <Demo id="dark">
         </ButtonGroup>
         <Heading>Terminal</Heading>
       </TitleBar>
-      <TerminalBody style={{ backgroundColor: 'black' }}>
-        <Cursor shape="underline" />
+      <TerminalBody style={{ backgroundColor: 'black', color: 'white' }}>
+        Last login: Sat Mar  9 12:31:40 on ttys004
+        <br />
+        {'love-from:terminal-veeloy dear$ '}
+        <Cursor shape='verticalBar' blink />
       </TerminalBody>
     </TerminalFrame>
   </DemoBody>
