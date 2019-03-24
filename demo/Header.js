@@ -5,11 +5,15 @@ import github from './github.svg';
 const Header = () => {
   return <div style={{
     height: '54px',
-    padding: '12px 12px 12px 0',
+    flexBasis: '54px',
+    minHeight: '54px',
+    maxHeight: '54px',
+    padding: '12px',
     borderBottom: '1px dashed #dddddd',
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center'
   }}>
     <img src={logo} />
     <style>

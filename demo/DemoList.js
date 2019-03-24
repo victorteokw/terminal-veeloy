@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import elementToCode from './elementToCode';
 
+import Tag from './Tag';
 import DemoMenu from './DemoMenu';
 import DemoMain from './DemoMain';
 
@@ -31,15 +32,18 @@ const DemoList = (props) => {
   return [
     <DemoMenu key="menu">{menu}</DemoMenu>,
     <DemoMain key="main">
-      <div>{main}</div>
+      <Tag>Effect</Tag>
+      <div style={{ alignSelf: 'center' }}>{main}</div>
+      <Tag>JSX Code</Tag>
       <pre style={{
+        alignSelf: 'center',
         padding: '8px',
         marginTop: '20px',
         backgroundColor: '#001628',
         color: '#f5d67b',
         fontSize: '13px',
         lineHeight: 1.75,
-        maxHeight: '216px',
+        minHeight: '400px',
         overflow: 'scroll',
         width: '571px',
         boxSizing: 'border-box'
@@ -48,6 +52,7 @@ const DemoList = (props) => {
           {elementToCode(React.Children.toArray(main.props.children)[0])}
         </code>
       </pre>
+      <Tag>Import Code</Tag>
     </DemoMain>
   ];
 };
