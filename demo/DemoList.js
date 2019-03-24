@@ -1,6 +1,8 @@
 import React, { useState, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 
+import elementToCode from './elementToCode';
+
 import DemoMenu from './DemoMenu';
 import DemoMain from './DemoMain';
 
@@ -15,7 +17,7 @@ const DemoList = (props) => {
       key: child.props.id
     }));
     if (selected === child.props.id) {
-      main = cloneElement(child.props.children[1], {});
+      main = child.props.children[1];
     }
   };
   React.Children.forEach(props.children, (child) => {
@@ -28,7 +30,20 @@ const DemoList = (props) => {
   });
   return [
     <DemoMenu key="menu">{menu}</DemoMenu>,
-    <DemoMain key="main">{main}</DemoMain>
+    <DemoMain key="main">
+      <div>{main}</div>
+      <pre style={{
+        padding: '30px',
+        backgroundColor: '#001628',
+        color: '#f5d67b',
+        fontSize: '16px',
+        lineHeight: 1.75
+      }}>
+        <code>
+          {elementToCode(React.Children.toArray(main.props.children)[0])}
+        </code>
+      </pre>
+    </DemoMain>
   ];
 };
 

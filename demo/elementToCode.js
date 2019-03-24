@@ -4,11 +4,15 @@ const propList = (element) => {
   return Object.keys(element.props).map((key) => {
     if (key === 'children') return '';
     const value = element.props[key];
+    if (element.type.defaultProps &&
+        (value === element.type.defaultProps[key])) {
+      return '';
+    }
     switch (typeof value) {
       case 'boolean':
-        return ` ${key}`;
+        return value ? ` ${key}` : '';
       case 'string':
-        return ` ${key}='${value}'`; // TODO: escape
+        return ` ${key}="${value}"`; // TODO: escape
       default:
         return ` ${key}={${JSON.stringify(value)}}`;
     }
@@ -26,17 +30,27 @@ const elementToCode = (...elements) => {
   }
   const { indentLevel, numberOfSpaces } = indentSetting;
   return elements.map((element) => {
-    if (React.Children.count(element.props.children) === 0) {
-      return `${indentLevel * numberOfSpaces}` +
-        `<${element.type.displayName}${propList(element)} />\n`;
+    if (!(element.type && element.props)) {
+      switch (typeof element) {
+        case 'string':
+          return ' '.repeat(indentLevel * numberOfSpaces) + element + '\n';
+        default:
+          return ' '.repeat(indentLevel * numberOfSpaces) +
+            `{${JSON.stringify(element)}}\n`;
+      }
     }
-    return `${indentLevel * numberOfSpaces}` +
-      `<${element.type.displayName}${propList(element)}>\n` +
+    const displayName = element.type.displayName || element.type;
+    if (React.Children.count(element.props.children) === 0) {
+      return `${' '.repeat(indentLevel * numberOfSpaces)}` +
+        `<${displayName}${propList(element)} />\n`;
+    }
+    return ' '.repeat(indentLevel * numberOfSpaces) +
+      `<${displayName}${propList(element)}>\n` +
       elementToCode(
-        ...React.children.toArray(element.props.children),
+        ...React.Children.toArray(element.props.children),
         { indentLevel: indentLevel + 1, numberOfSpaces }
       ) +
-      `${indentLevel * numberOfSpaces}</${element.type.displayName}>\n`;
+      ' '.repeat(indentLevel * numberOfSpaces) + `</${displayName}>\n`;
   }).join('');
 };
 

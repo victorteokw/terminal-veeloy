@@ -5,7 +5,9 @@ const DemoMain = ({ children }) => (
     flexGrow: 1,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flexDirection: 'column',
+    
   }}>
     {children}
   </div>
