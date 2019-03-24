@@ -1,5 +1,26 @@
 import React from 'react';
 
+const toObjectLiteral = (value) => {
+  if (Array.isArray(value)) {
+    return '[' + value.map((v) => toObjectLiteral(v)).join(', ') + ']';
+  }
+  if (value === null) {
+    return 'null';
+  }
+  switch (typeof value) {
+    case 'string':
+      return `'${value}'`;
+    case 'number':
+      return value;
+    case 'boolean':
+      return value;
+    case 'object':
+      return '{ ' + Object.keys(value).map(
+        (k) => `${toObjectLiteral(k)}: ${toObjectLiteral(value[k])}`
+      ).join(', ') + ' }';
+  }
+};
+
 const propList = (element) => {
   return Object.keys(element.props).map((key) => {
     if (key === 'children') return '';
@@ -12,23 +33,23 @@ const propList = (element) => {
       case 'boolean':
         return value ? ` ${key}` : '';
       case 'string':
-        return ` ${key}="${value}"`; // TODO: escape
+        return ` ${key}='${value}'`; // TODO: escape
       default:
-        return ` ${key}={${JSON.stringify(value)}}`;
+        return ` ${key}={${toObjectLiteral(value)}}`;
     }
   }).join('');
 };
 
 const elementToCode = (...elements) => {
-  let indentSetting = {
+  let settings = {
     indentLevel: 0,
     numberOfSpaces: 2
   };
   if (elements[elements.length - 1].indentLevel !== undefined) {
-    indentSetting = elements[elements.length - 1];
+    settings = elements[elements.length - 1];
     elements = elements.slice(0, elements.length - 1);
   }
-  const { indentLevel, numberOfSpaces } = indentSetting;
+  const { indentLevel, numberOfSpaces } = settings;
   return elements.map((element) => {
     if (!(element.type && element.props)) {
       switch (typeof element) {
@@ -40,7 +61,7 @@ const elementToCode = (...elements) => {
         }
         default:
           return ' '.repeat(indentLevel * numberOfSpaces) +
-            `{${JSON.stringify(element)}}\n`;
+            `{${toObjectLiteral(element)}}\n`;
       }
     }
     const displayName = element.type.displayName || element.type;
