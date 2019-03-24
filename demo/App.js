@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
 
+import Header from './Header';
 import LightTitleBarDemo from './LightTitleBarDemo';
 import DarkTitleBarDemo from './DarkTitleBarDemo';
 
@@ -12,15 +13,22 @@ const App = () => {
     height: '100vh',
     display: 'flex',
     alignItems: 'stretch',
-    flexDirection: 'row'
+    flexDirection: 'column'
   }}>
     <style>
       body {'{'} margin: 0; {'}'}
     </style>
+    <Header />
+    <div style={{
+      display: 'flex',
+      alignItems: 'stretch',
+      flexDirection: 'row'
+    }}>
     <DemoList>
       {LightTitleBarDemo}
       {DarkTitleBarDemo}
     </DemoList>
+    </div>
   </div>;
 };
 

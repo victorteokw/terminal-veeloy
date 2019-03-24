@@ -4,7 +4,7 @@ const DemoMenu = ({ children }) => (
   <nav style={{
     display: 'flex',
     flexDirection: 'column',
-    padding: '20px 40px',
+    padding: '26px',
     lineHeight: '40px',
     fontFamily: 'monospace',
     borderRight: '1px dashed #dddddd'
