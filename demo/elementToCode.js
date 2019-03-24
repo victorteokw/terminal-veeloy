@@ -32,8 +32,12 @@ const elementToCode = (...elements) => {
   return elements.map((element) => {
     if (!(element.type && element.props)) {
       switch (typeof element) {
-        case 'string':
+        case 'string': {
+          if (element.endsWith(' ') || element.startsWith(' ')) {
+            element = '{\'' + element + '\'}';
+          }
           return ' '.repeat(indentLevel * numberOfSpaces) + element + '\n';
+        }
         default:
           return ' '.repeat(indentLevel * numberOfSpaces) +
             `{${JSON.stringify(element)}}\n`;

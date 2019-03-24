@@ -38,9 +38,9 @@ const LightTitleBarDemo = <Demo id="light">
         <Heading>Terminal</Heading>
       </TitleBar>
       <TerminalBody style={{ backgroundColor: 'white', color: 'black' }}>
-        Last updated: Today<br />
-        To https://github.com/zhangkaiyulw/terminal-veeloy.git<br />
-        Last updated: Today
+        Last login: Sat Mar  9 12:31:40 on ttys004
+        <br />
+        {'love-from:terminal-veeloy dear$ '}
         <Cursor blink />
       </TerminalBody>
     </TerminalFrame>
