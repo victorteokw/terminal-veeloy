@@ -38,7 +38,10 @@ const App = () => {
               <NavItem
                 key={`item-${page.path}`}
                 selected={path === page.path}
-                onClick={() => setPath(page.path)}
+                onClick={() => setPath(
+                  page.path,
+                  `${page.title} - Terminal Veeloy`
+                )}
               >
                 {page.title}
               </NavItem>
