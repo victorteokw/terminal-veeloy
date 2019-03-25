@@ -13,14 +13,10 @@ import Case from './layout/Case';
 import Default from './layout/Default';
 
 import pageList from './pages';
+import exampleList from './examples';
 import NotFoundPage from './pages/NotFoundPage';
 
 import useRouter from './useRouter';
-
-// import LightTitleBarDemo from './LightTitleBarDemo';
-// import DarkTitleBarDemo from './DarkTitleBarDemo';
-//
-// import DemoList from './DemoList';
 
 const App = () => {
   const [path, setPath] = useRouter();
@@ -49,6 +45,18 @@ const App = () => {
           ])
         }
         <Tag>Examples</Tag>
+        {
+          exampleList.map((example) => <NavItem
+            key={`example-${example.path}`}
+            selected={path === example.path}
+            onClick={() => setPath(
+              example.path,
+              `${example.title} - Terminal Veeloy`
+            )}
+          >
+            {example.title}
+          </NavItem>)
+        }
         <Tag>Documentations</Tag>
       </AppNav>
       <AppMain>
@@ -62,6 +70,13 @@ const App = () => {
               ))
             ])
           }
+          {
+            exampleList.map((example) => (
+              <Case key={example.path} value={example.path}>
+                <example.component />
+              </Case>
+            ))
+          }
           <Default>
             <NotFoundPage />
           </Default>
@@ -70,10 +85,5 @@ const App = () => {
     </AppBody>
   </AppLayout>;
 };
-
-// <DemoList>
-//   {LightTitleBarDemo}
-//   {DarkTitleBarDemo}
-// </DemoList>
 
 export default hot(module)(App);
