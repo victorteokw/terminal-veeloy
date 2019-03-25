@@ -12,15 +12,7 @@ const DemoMenu = ({ children }) => (
     borderRight: '1px dashed #dddddd'
   }}>
     <Tag>Examples</Tag>
-    <div style={{
-      paddingLeft: '12px',
-      display: 'flex',
-      flexDirection: 'column',
-      lineHeight: 2.5,
-      fontFamily: 'monospace',
-      justifyItems: 'flex-start',
-      alignItems: 'flex-start'
-    }}>{children}</div>
+    <div>{children}</div>
   </nav>
 );
 
