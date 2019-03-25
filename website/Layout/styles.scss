@@ -52,16 +52,16 @@ body {
         color: #cccccc;
         font-family: monospace;
         transition: color .2s ease-in-out;
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 0;
+        }
         &:hover {
           color: #666666;
         }
         &.highlight {
           color: #000000;
         }
-      }
-
-      .navItemSpacer {
-        height: 16px;
       }
     }
 
