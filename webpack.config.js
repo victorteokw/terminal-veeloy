@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Terminal Veeloy Demo',
+      title: 'Terminal Veeloy',
       filename: 'index.html'
     })
   ]
