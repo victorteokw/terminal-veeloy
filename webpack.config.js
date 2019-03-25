@@ -6,7 +6,8 @@ module.exports = {
   entry: './website/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -18,7 +19,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV === 'production' ?
+            MiniCssExtractPlugin.loader : 'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -40,11 +42,12 @@ module.exports = {
       title: 'Terminal Veeloy',
       filename: 'index.html'
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
-  ],
+    process.env.NODE_ENV === 'production' ?
+      new MiniCssExtractPlugin({
+        filename: 'styles.css',
+        chunkFilename: '[id].css'
+      }) : undefined
+  ].filter((plugin) => plugin !== undefined),
   devServer: {
     historyApiFallback: true
   }
