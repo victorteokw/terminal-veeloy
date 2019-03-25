@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+.appLayout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+  .appHeader {
+    height: 54px;
+    flex-basis: 54px;
+    min-height: 54px;
+    max-height: 54px;
+    padding: 12px;
+    border-bottom: 1px dashed #dddddd;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .githubLink {
+      opacity: 0.15;
+      cursor: pointer;
+      transition: opacity .25s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .appBody {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+  }
+}
