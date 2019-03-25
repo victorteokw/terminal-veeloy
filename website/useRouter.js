@@ -34,13 +34,10 @@ const router = (state, action) => {
 };
 
 const useRouter = () => {
-  const [
-    state,
-    dispatch
-  ] = useReducer(router, initialState);
+  const [{ path }, dispatch] = useReducer(router, initialState);
   useEffect(...routerUpdateHook(dispatch));
   const setPath = setPathFunc(dispatch);
-  return [state.path, setPath];
+  return [path, setPath];
 };
 
 export default useRouter;

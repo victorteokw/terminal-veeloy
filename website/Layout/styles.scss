@@ -64,5 +64,15 @@ body {
         height: 16px;
       }
     }
+
+    .appMain {
+      box-sizing: 'border-box';
+      flex-grow: 1;
+      display: 'flex';
+      align-items: 'flex-start';
+      justify-content: 'flex-start';
+      flex-direction: 'column';
+      overflow: 'scroll';
+    }
   }
 }

@@ -5,9 +5,17 @@ import AppLayout from './Layout/AppLayout';
 import AppHeader from './Layout/AppHeader';
 import AppBody from './Layout/AppBody';
 import AppNav from './Layout/AppNav';
+import AppMain from './Layout/AppMain';
 import Tag from './Tag';
 import NavItem from './Layout/NavItem';
 import NavItemSpacer from './Layout/NavItemSpacer';
+import Switch from './Layout/Switch';
+import Case from './Layout/Case';
+import Default from './Layout/Default';
+
+import HomePage from './HomePage';
+import InstallationPage from './InstallationPage';
+import NotFoundPage from './NotFoundPage';
 
 import useRouter from './useRouter';
 
@@ -18,6 +26,7 @@ import useRouter from './useRouter';
 
 const App = () => {
   const [path, setPath] = useRouter();
+
   return <AppLayout>
     <AppHeader />
     <AppBody>
@@ -36,6 +45,19 @@ const App = () => {
         <Tag>Examples</Tag>
         <Tag>Documentations</Tag>
       </AppNav>
+      <AppMain>
+        <Switch value={path}>
+          <Case value='/'>
+            <HomePage />
+          </Case>
+          <Case value='/installation'>
+            <InstallationPage />
+          </Case>
+          <Default>
+            <NotFoundPage />
+          </Default>
+        </Switch>
+      </AppMain>
     </AppBody>
   </AppLayout>;
 };
