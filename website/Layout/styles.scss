@@ -4,10 +4,11 @@ body {
 
 .appLayout {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: stretch;
   flex-direction: column;
+  flex-wrap: wrap;
 
   .appHeader {
     height: 54px;
