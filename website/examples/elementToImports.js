@@ -21,7 +21,6 @@ const extractSettings = (...args) => {
 };
 
 const importList = (...elements) => {
-  console.log(elements);
   const requirements = [];
   elements.forEach((element) => {
     if (element.type && element.type.displayName) {
