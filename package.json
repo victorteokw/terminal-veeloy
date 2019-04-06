@@ -1,10 +1,12 @@
 {
   "name": "terminal-veeloy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The terminal for veeloy (the future).",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot",
+    "build": "babel lib --out-dir common; babel index.js --out-file common/index.js",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/plugin-proposal-function-bind": "^7.2.0",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
