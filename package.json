@@ -1,8 +1,12 @@
 {
   "name": "terminal-veeloy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The terminal for veeloy (the future).",
   "main": "index.js",
+  "files": [
+    "lib",
+    "common"
+  ],
   "scripts": {
     "start": "webpack-dev-server --hot",
     "build": "babel lib --out-dir common; babel index.js --out-file common/index.js",
