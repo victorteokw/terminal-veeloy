@@ -40,16 +40,29 @@ const propList = (element) => {
   }).join('');
 };
 
-const elementToCode = (...elements) => {
-  let settings = {
-    indentLevel: 0,
-    numberOfSpaces: 2
-  };
-  if (elements[elements.length - 1].indentLevel !== undefined) {
-    settings = elements[elements.length - 1];
-    elements = elements.slice(0, elements.length - 1);
+const defaultSettings = {
+  indentLevel: 0,
+  numberOfSpaces: 2,
+  oneLineTextNode: true
+};
+
+const extractSettings = (...args) => {
+  if (defaultSettings[Object.keys(args[args.length - 1])[0]] !== undefined) {
+    const settings = args[args.length - 1];
+    Object.keys(defaultSettings).forEach((key) => {
+      if (settings[key] === undefined) {
+        settings[key] = defaultSettings[key];
+      }
+    });
+    return [settings, args.slice(0,args.length - 1)];
+  } else {
+    return [defaultSettings, args];
   }
-  const { indentLevel, numberOfSpaces } = settings;
+};
+
+const elementToCode = (...args) => {
+  const [settings, elements] = extractSettings(...args);
+  const { indentLevel, numberOfSpaces, oneLineTextNode } = settings;
   return elements.map((element) => {
     if (!(element.type && element.props)) {
       switch (typeof element) {
@@ -68,6 +81,17 @@ const elementToCode = (...elements) => {
     if (React.Children.count(element.props.children) === 0) {
       return `${' '.repeat(indentLevel * numberOfSpaces)}` +
         `<${displayName}${propList(element)} />\n`;
+    }
+    if (oneLineTextNode) {
+      if (React.Children.count(element.props.children) === 1) {
+        const child = React.Children.toArray(element.props.children)[0];
+        if (!child.props && !child.type) {
+          return `${' '.repeat(indentLevel * numberOfSpaces)}` +
+            `<${displayName}${propList(element)}>` +
+            String(child) +
+            `</${displayName}>\n`;
+        }
+      }
     }
     return ' '.repeat(indentLevel * numberOfSpaces) +
       `<${displayName}${propList(element)}>\n` +

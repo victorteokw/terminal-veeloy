@@ -7,7 +7,7 @@ const defaultSettings = {
 };
 
 const extractSettings = (...args) => {
-  if (defaultSettings[Object.keys(args)[0]] !== undefined) {
+  if (defaultSettings[Object.keys(args[args.length - 1])[0]] !== undefined) {
     const settings = args[args.length - 1];
     Object.keys(defaultSettings).forEach((key) => {
       if (settings[key] === undefined) {

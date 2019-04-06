@@ -13,7 +13,7 @@ import TerminalBody from '../../lib/TerminalBody';
 import Text from '../../lib/Text';
 import Cursor from '../../lib/Cursor';
 
-const DarkTitleBar = <TerminalFrame darkMode>
+const ScaffoldKit = <TerminalFrame darkMode>
   <TitleBar>
     <ButtonGroup>
       <ButtonSpacer />
@@ -30,14 +30,14 @@ const DarkTitleBar = <TerminalFrame darkMode>
       </Button>
       <ButtonSpacer />
     </ButtonGroup>
-    <Heading>Terminal</Heading>
+    <Heading>Scaffold Kit Terminal</Heading>
   </TitleBar>
   <TerminalBody style={{ backgroundColor: 'black', color: 'white' }}>
-    <Text>Last login: Sat Mar  9 12:31:40 on ttys004</Text>
+    {'$ gen-my-app'}
     <br />
-    <Text>love-from:terminal-veeloy dear$ </Text>
-    <Cursor shape='verticalBar' blink />
+    {'love-from:terminal-veeloy dear$ '}
+    <Cursor shape='block' blink />
   </TerminalBody>
 </TerminalFrame>;
 
-export default DarkTitleBar;
+export default ScaffoldKit;

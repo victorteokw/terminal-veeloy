@@ -10,6 +10,7 @@ import CloseIcon from '../../lib/CloseIcon';
 import MinimizeIcon from '../../lib/MinimizeIcon';
 import MaximizeIcon from '../../lib/MaximizeIcon';
 import TerminalBody from '../../lib/TerminalBody';
+import Text from '../../lib/Text';
 import Cursor from '../../lib/Cursor';
 
 const LightTitleBar = <TerminalFrame>
@@ -32,9 +33,9 @@ const LightTitleBar = <TerminalFrame>
     <Heading>Terminal</Heading>
   </TitleBar>
   <TerminalBody style={{ backgroundColor: 'white', color: 'black' }}>
-    Last login: Sat Mar  9 12:31:40 on ttys004
+    <Text>Last login: Sat Mar  9 12:31:40 on ttys004</Text>
     <br />
-    {'love-from:terminal-veeloy dear$ '}
+    <Text>love-from:terminal-veeloy dear$ </Text>
     <Cursor blink />
   </TerminalBody>
 </TerminalFrame>;
