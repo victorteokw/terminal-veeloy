@@ -1,6 +1,6 @@
 {
   "name": "terminal-veeloy",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "The terminal for veeloy (the future).",
   "main": "index.js",
   "files": [
