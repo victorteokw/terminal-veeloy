@@ -2,7 +2,6 @@ export Button from './lib/Button';
 export ButtonGroup from './lib/ButtonGroup';
 export ButtonSpacer from './lib/ButtonSpacer';
 export CloseIcon from './lib/CloseIcon';
-export ColorTheme from './lib/ColorTheme';
 export Cursor from './lib/Cursor';
 export Heading from './lib/Heading';
 export MaximizeIcon from './lib/MaximizeIcon';

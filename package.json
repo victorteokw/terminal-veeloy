@@ -1,6 +1,6 @@
 {
   "name": "terminal-veeloy",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "The terminal for veeloy (the future).",
   "main": "index.js",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "build": "babel lib --out-dir common/lib; babel index.js --out-file common/index.js",
+    "build": "babel lib --out-dir common/lib --config-file ./.babelrc.prod --no-babelrc; babel index.js --out-file common/index.js --config-file ./.babelrc.prod --no-babelrc",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
