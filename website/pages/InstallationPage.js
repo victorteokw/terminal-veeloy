@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+import useTitle from '../useTitle';
 import Tag from '../components/Tag';
 import Article from '../components/Article';
 import Block from '../components/Block';
@@ -10,6 +11,7 @@ import Message from '../components/Message';
 import HighlightedText from '../components/HighlightedText';
 
 const InstallationPage = ({}) => {
+  useTitle('Installation');
   const [copied, setCopied] = useState(false);
   const importString = "import { TerminalFrame, TerminalBody } \
 from 'terminal-veeloy';";

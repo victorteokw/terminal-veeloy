@@ -3,9 +3,11 @@ import elementToCode from './elementToCode';
 import elementToImports from './elementToImports';
 import Tag from '../components/Tag';
 import CodeBlock from '../components/CodeBlock';
+import useTitle from '../useTitle';
 import { exampleContainer } from './styles.scss';
 
-const wrapExampleComponent = (example) => () => {
+const wrapExampleComponent = (example, title) => () => {
+  useTitle(title);
   return <div className={exampleContainer}>
     <Tag>Effect</Tag>
     <div style={{ alignSelf: 'center' }}>{example}</div>

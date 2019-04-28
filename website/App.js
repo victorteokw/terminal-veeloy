@@ -17,9 +17,12 @@ import exampleList from './examples';
 import NotFoundPage from './pages/NotFoundPage';
 
 import useRouter from './useRouter';
+import useTitle from './useTitle';
 
 const App = () => {
   const [{ path }, setPath] = useRouter();
+  useTitle.setDefault('Terminal Veeloy');
+  useTitle.setSuffix(' ∙ Terminal Veeloy');
 
   return <AppLayout>
     <AppHeader />

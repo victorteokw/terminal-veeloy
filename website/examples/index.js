@@ -7,17 +7,17 @@ const examples = [
   {
     title: 'Light Title Bar',
     path: '/examples/light-title-bar',
-    component: wrapExampleComponent(LightTitleBar)
+    component: wrapExampleComponent(LightTitleBar, 'Light Title Bar')
   },
   {
     title: 'Dark Title Bar',
     path: '/examples/dark-title-bar',
-    component: wrapExampleComponent(DarkTitleBar)
+    component: wrapExampleComponent(DarkTitleBar, 'Dark Title Bar')
   },
   {
     title: 'Scaffold Kit',
     path: '/examples/scaffold-kit',
-    component: wrapExampleComponent(ScaffoldKit)
+    component: wrapExampleComponent(ScaffoldKit, 'Scaffold Kit')
   }
 ];
 
