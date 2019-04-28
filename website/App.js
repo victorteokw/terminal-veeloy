@@ -19,7 +19,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import useRouter from './useRouter';
 
 const App = () => {
-  const [path, setPath] = useRouter();
+  const [{ path }, setPath] = useRouter();
 
   return <AppLayout>
     <AppHeader />
@@ -34,10 +34,7 @@ const App = () => {
               <NavItem
                 key={`item-${page.path}`}
                 selected={path === page.path}
-                onClick={() => setPath(
-                  page.path,
-                  `${page.title} - Terminal Veeloy`
-                )}
+                onClick={() => setPath(page.path)}
               >
                 {page.title}
               </NavItem>
@@ -49,10 +46,7 @@ const App = () => {
           exampleList.map((example) => <NavItem
             key={`example-${example.path}`}
             selected={path === example.path}
-            onClick={() => setPath(
-              example.path,
-              `${example.title} - Terminal Veeloy`
-            )}
+            onClick={() => setPath(example.path)}
           >
             {example.title}
           </NavItem>)
