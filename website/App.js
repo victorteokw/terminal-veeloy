@@ -62,7 +62,7 @@ const App = () => {
             pageList.map((section) => [
               ...section.pages.map((page) => (
                 <Case value={page.path}>
-                  <page.component />
+                  <page.component setPath={setPath} path={path} />
                 </Case>
               ))
             ])
@@ -75,7 +75,7 @@ const App = () => {
             ))
           }
           <Default>
-            <NotFoundPage />
+            <NotFoundPage setPath={setPath} path={path} />
           </Default>
         </Switch>
       </AppMain>
