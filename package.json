@@ -46,6 +46,7 @@
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.4",
     "react-syntax-highlighter": "^10.2.1",
+    "react-use-path": "^0.1.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.30.0",

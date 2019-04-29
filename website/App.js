@@ -16,11 +16,11 @@ import pageList from './pages';
 import exampleList from './examples';
 import NotFoundPage from './pages/NotFoundPage';
 
-import useRouter from './useRouter';
+import usePath from 'react-use-path';
 import useTitle from './useTitle';
 
 const App = () => {
-  const [{ path }, setPath] = useRouter();
+  const [{ path }, setPath] = usePath();
   useTitle.setDefault('Terminal Veeloy');
   useTitle.setSuffix(' ∙ Terminal Veeloy');
 
