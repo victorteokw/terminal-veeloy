@@ -3,7 +3,7 @@ import useTitle from '../useTitle';
 
 const LimitationsPage = ({}) => {
   useTitle('Limitation');
-  return <div>Limitations</div>;
+  return <div>This is the limitation. </div>;
 };
 
 export default LimitationsPage;
