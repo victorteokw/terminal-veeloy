@@ -1,5 +1,5 @@
 import React from 'react';
-import mergeProps from '../../lib/mergeProps';
+import mergeProps from 'react-merge-props';
 
 const Article = (props) => (
   <article {...mergeProps({

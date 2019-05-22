@@ -1,6 +1,6 @@
 # Terminal Veeloy
 
-Veeloy is a Hakka word, it means future.
+Terminal UI emulation.
 
 ## Installation
 

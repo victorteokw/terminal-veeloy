@@ -15,14 +15,20 @@ import Default from './layout/Default';
 import pageList from './pages';
 import exampleList from './examples';
 import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './pages/HomePage';
 
 import usePath from 'react-use-path';
 import useTitle from './useTitle';
+
+import './App.scss';
 
 const App = () => {
   const [{ path }, setPath] = usePath();
   useTitle.setDefault('Terminal Veeloy');
   useTitle.setSuffix(' ∙ Terminal Veeloy');
+  if (path === '/') {
+    return <HomePage />;
+  }
 
   return <AppLayout>
     <AppHeader />

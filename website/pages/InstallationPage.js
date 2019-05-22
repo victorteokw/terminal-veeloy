@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Portal from 'react-functional-portal';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import useTitle from '../useTitle';
@@ -6,7 +7,6 @@ import Tag from '../components/Tag';
 import Article from '../components/Article';
 import Block from '../components/Block';
 import CopyIcon from '../components/CopyIcon';
-import Portal from '../components/Portal';
 import Message from '../components/Message';
 import HighlightedText from '../components/HighlightedText';
 

@@ -1,4 +1,4 @@
-import IntroductionPage from './IntroductionPage';
+
 import InstallationPage from './InstallationPage';
 import LimitationsPage from './LimitationsPage';
 import TryItOutPage from './TryItOutPage';
@@ -7,11 +7,6 @@ const pages = [
   {
     tag: 'Introduction',
     pages: [
-      {
-        title: 'Introduction',
-        path: '/',
-        component: IntroductionPage
-      },
       {
         title: 'Installation',
         path: '/installation',

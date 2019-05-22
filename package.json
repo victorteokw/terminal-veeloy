@@ -23,7 +23,8 @@
   "homepage": "https://github.com/zhangkaiyulw/terminal-veeloy#readme",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.6"
+    "react": "^16.8.6",
+    "react-merge-props": "^0.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -44,9 +45,10 @@
     "node-sass": "^4.12.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",
+    "react-functional-portal": "^0.1.0",
     "react-hot-loader": "^4.8.4",
     "react-syntax-highlighter": "^10.2.1",
-    "react-use-path": "^0.1.5",
+    "react-use-path": "^0.1.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.30.0",

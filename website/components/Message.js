@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import mergeProps from '../../lib/mergeProps';
+import mergeProps from 'react-merge-props';
 
 const Message = (props) => (
   <div {...mergeProps({

@@ -1,0 +1,64 @@
+.landingHeader {
+  align-items: center;
+  animation: rolling 30s ease infinite;
+  background-image: linear-gradient(238deg, #B3FFAB, #12FFF7);
+  background-size: 300% 300%;
+  color: #454545;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 15px 15px 70px;
+  text-align: center;
+  .landingTitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 300%;
+    font-weight: 100;
+    margin: 12px 0 0;
+  }
+  .landingTag {
+    font-weight: 300;
+    opacity: 0.7;
+    margin: 0 0 12px 0;
+  }
+  .landingMenu {
+    display: grid;
+    grid-gap: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+    .menuLink {
+      align-items: center;
+      background-color: rgba(0, 0, 0, .2);
+      border-radius: 5px;
+      color: #ffffff;
+      display: inline-flex;
+      flex-direction: column;
+      height: 180px;
+      justify-content: center;
+      text-decoration: none;
+      transition: all .3s cubic-bezier(0.250, 0.460, 0.450, 0.940), color 0s;
+      width: 180px;
+      svg {
+        fill: currentColor;
+        height: 65px;
+        width: 65px;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 12px 0 0;
+      }
+      &:hover, &:focus {
+        background-color: rgba(255,255,255,1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
+        color: #f527e0;
+        transform: scale(1.1);
+        svg {
+          fill: url(#linear);
+        }
+      }
+    }
+  }
+}

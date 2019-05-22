@@ -1,6 +1,6 @@
 import React from 'react';
+import Portal from 'react-functional-portal';
 import useTitle from '../useTitle';
-import Portal from '../components/Portal';
 import BlackAndWhite from '../examples/BlackAndWhite';
 
 const NotFoundPage = ({ setPath }) => {

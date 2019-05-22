@@ -2,7 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import style from 'react-syntax-highlighter/dist/styles/hljs';
 import CleanFragment from './CleanFragment';
-import mergeProps from '../../lib/mergeProps';
+import mergeProps from 'react-merge-props';
 
 const HighlightedText = (props) => (
   <SyntaxHighlighter {...mergeProps({ style, PreTag: CleanFragment }, props)}>
